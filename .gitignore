@@ -1,0 +1,21 @@
+# Ignore Python __pycache__ and virtual environments
+**/__pycache__/
+**/*.pyc
+.env
+.venv/
+venv/
+env/
+
+# Ignore Node.js modules
+**/node_modules/
+**/dist/
+**/build/
+**/.vite/
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
