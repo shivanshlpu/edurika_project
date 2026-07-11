@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1'
+const BASE = import.meta.env.VITE_API_URL || 'https://edurika-project.onrender.com/api/v1'
 
 export const getSymptoms = () => axios.get(`${BASE}/symptoms`)
 export const predict = (symptoms) => axios.post(`${BASE}/predict`, { symptoms })
