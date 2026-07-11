@@ -89,6 +89,27 @@ export default function SymptomSelector({ availableSymptoms, onPredict, isLoadin
         <p className="text-sm text-gray-500 mb-4">Tell us how you're feeling, and our AI will automatically identify the symptoms.</p>
         
         <div className="mb-6 bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+          <div className="flex flex-wrap items-center gap-2 mb-3">
+            <span className="text-xs text-gray-500 font-medium uppercase tracking-wide">Quick Try:</span>
+            <button 
+              onClick={() => setNlText("I have a severe headache, sensitivity to light, and I feel nauseous.")} 
+              className="text-xs bg-white border border-blue-200 text-blue-700 px-2.5 py-1 rounded-md hover:bg-blue-50 hover:border-blue-300 transition-colors"
+            >
+              Migraine
+            </button>
+            <button 
+              onClick={() => setNlText("I've been experiencing stomach pain, vomiting, and diarrhea since last night after eating outside.")} 
+              className="text-xs bg-white border border-blue-200 text-blue-700 px-2.5 py-1 rounded-md hover:bg-blue-50 hover:border-blue-300 transition-colors"
+            >
+              Food Poisoning
+            </button>
+            <button 
+              onClick={() => setNlText("I have a high fever, continuous sneezing, a runny nose, and I feel very fatigued.")} 
+              className="text-xs bg-white border border-blue-200 text-blue-700 px-2.5 py-1 rounded-md hover:bg-blue-50 hover:border-blue-300 transition-colors"
+            >
+              Flu/Cold
+            </button>
+          </div>
           <textarea
             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none mb-3 text-sm"
             rows="3"
