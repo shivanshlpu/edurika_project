@@ -83,13 +83,20 @@ export default function DiseaseDetailModal({ diseaseName, isOpen, onClose }) {
           <div>
             <h2 className="text-2xl font-semibold text-gray-900 mb-1">{diseaseName}</h2>
             {info?.source && (
-              <span className={`inline-block text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full ${
-                info.source === 'gemini'
-                  ? 'bg-purple-100 text-purple-700'
-                  : 'bg-gray-100 text-gray-500'
-              }`}>
-                {info.source === 'gemini' ? '✨ AI Generated' : 'Offline Data'}
-              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className={`inline-block text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded-full ${
+                  info.source === 'gemini'
+                    ? 'bg-purple-100 text-purple-700'
+                    : 'bg-gray-100 text-gray-500'
+                }`}>
+                  {info.source === 'gemini' ? '✨ AI Generated' : 'Offline Data'}
+                </span>
+                {info.fallbackReason && (
+                  <span className="text-xs text-amber-600 font-medium bg-amber-50 px-2 py-0.5 rounded-full border border-amber-100">
+                    {info.fallbackReason} - Using Offline AI System
+                  </span>
+                )}
+              </div>
             )}
           </div>
 

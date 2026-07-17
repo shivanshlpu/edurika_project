@@ -209,16 +209,19 @@ Rules:
 
         except Exception as e:
             print(f"Gemini API call failed for '{disease_name}': {e}")
+            fallback_reason = "Gemini API Limit Exceeded" if "429" in str(e) or "quota" in str(e).lower() else "API Error"
             # Fall through to fallback data
 
     # ── Fallback to local data ─────────────────
     if disease_name in FALLBACK_DISEASE_INFO:
         info = FALLBACK_DISEASE_INFO[disease_name].copy()
         info["source"] = "local"
+        if 'fallback_reason' in locals():
+            info["fallbackReason"] = fallback_reason
         return info
 
     # Generic fallback for unknown diseases
-    return {
+    fallback_info = {
         "description": f"Detailed information about {disease_name} is not available offline. Please consult a healthcare professional.",
         "commonSymptoms": [],
         "precautions": ["Consult a healthcare professional", "Monitor your symptoms", "Rest and stay hydrated"],
@@ -226,6 +229,9 @@ Rules:
         "warningSigns": ["Seek immediate medical help if symptoms worsen rapidly"],
         "source": "default",
     }
+    if 'fallback_reason' in locals():
+        fallback_info["fallbackReason"] = fallback_reason
+    return fallback_info
 
 
 # Natural Language Symptom Extraction

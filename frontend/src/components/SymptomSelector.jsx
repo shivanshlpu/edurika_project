@@ -85,8 +85,13 @@ export default function SymptomSelector({ availableSymptoms, onPredict, isLoadin
       
       {/* Left side: Search & Select */}
       <div className="flex-grow p-6 md:border-r border-gray-100 flex flex-col">
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">Describe Your Symptoms</h2>
-        <p className="text-sm text-gray-500 mb-4">Tell us how you're feeling, and our AI will automatically identify the symptoms.</p>
+        <div className="flex items-center gap-3 mb-2">
+          <h2 className="text-xl font-semibold text-gray-900">Describe Your Symptoms</h2>
+          <span className="text-[10px] font-semibold bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full uppercase tracking-wider border border-emerald-200">
+            Local Offline AI
+          </span>
+        </div>
+        <p className="text-sm text-gray-500 mb-4">Tell us how you're feeling, and our offline AI will automatically identify the symptoms without API limits.</p>
         
         <div className="mb-6 bg-blue-50/50 p-4 rounded-xl border border-blue-100">
           <div className="flex flex-wrap items-center gap-2 mb-3">
