@@ -3,10 +3,13 @@
 SymptomSense is a full-stack React and FastAPI web application that predicts likely diseases based on selected symptoms using three machine learning algorithms (Logistic Regression, KNN, Decision Tree).
 
 ## Live Demo
-[Live Demo Link (Update when deployed)](#)
+[[(https://edurika-project.vercel.app/)](#)]
 
 <!-- add screenshot -->
-![SymptomSense Screenshot](https://via.placeholder.com/800x450?text=SymptomSense+Screenshot)
+<img width="1533" height="752" alt="image" src="https://github.com/user-attachments/assets/b9df3575-7d9a-43d2-9d53-b4ee8889b760" />
+<img width="941" height="743" alt="image" src="https://github.com/user-attachments/assets/747237e9-3b12-41de-99f2-807719023028" />
+
+
 
 ## Tech Stack
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
